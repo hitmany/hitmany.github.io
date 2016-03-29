@@ -1,86 +1,261 @@
 <!DOCTYPE html>
 <html>
-  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-	<link rel="icon" type="image/x-icon" href="favicon.ico">
-	<meta name="description" content="Hitmany blog">
+<head>
+	<meta charset="UTF-8">
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+	<title>hitmany</title>
 
-    <title>Hitmany Blog</title>
-  </head>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto">
+	<style>
+	*,
+	*:before,
+	*:after {
+		box-sizing: border-box;
+	}
 
-  <body>
-  <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-(function (d, w, c) {
-    (w[c] = w[c] || []).push(function() {
-        try {
-            w.yaCounter28998730 = new Ya.Metrika({id:28998730,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true});
-        } catch(e) { }
-    });
+	html,
+	body,
+	.do-you-even-flexbox,
+	.wrapper {
+		height: 100%;
+	}
 
-    var n = d.getElementsByTagName("script")[0],
-        s = d.createElement("script"),
-        f = function () { n.parentNode.insertBefore(s, n); };
-    s.type = "text/javascript";
-    s.async = true;
-    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+	body {
+		margin: 0;
+		color: #FFF;
+		font: normal 16px/1.2 "Roboto", Helvetica, Arial, sans-serif;
+		text-align: center;
+		text-shadow: 1px 1px #000;
+		background: #D9D6CA url('images/bg.jpg') no-repeat center center fixed;
+		background-size: cover;
+	}
 
-    if (w.opera == "[object Opera]") {
-        d.addEventListener("DOMContentLoaded", f, false);
-    } else { f(); }
-})(document, window, "yandex_metrika_callbacks");
-</script>
-<noscript><div><img src="//mc.yandex.ru/watch/28998730" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-    <header>
-      <div class="inner">
-        <h1>Hitmany Blog</h1>
-        <h2>About Sourcepawn, AMX, Linux </br>and game communities</h2>
-        <img style="height: 134px;width: 134px;padding-left: 68px;position: absolute;top: 0;right: 0;" src="images/avatar.jpg">
-      </div>
-    </header>
+	::-moz-selection { background: #0277BD; color: #fff; text-shadow: none; }
+	::selection {
+		background-color: #0288D1;
+		color: #FFF;
+		text-shadow: none;
+	}
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
+	a {
+		color: #F5F7FA;
+		text-decoration: none;
+	}
 
-        <h1>My current projects:</h1>
-		<h2 style="margin-top:20px;">Landing-Party</h2>
-        <p>The gaming community&nbsp;Counter-strike in&nbsp;Russia. Founded in&nbsp;2009 by&nbsp;me&nbsp;and Dmitry which is also </br>known as IIpuBeTuK^_^Te6e, lanprotector. 
-		The objectives of&nbsp;the project were always unique <br>and comfortable to&nbsp;play. The project with a&nbsp;great history and a&nbsp;great community.</p>
-		<u><li><a href="http://lpstrike.ru">Project site</a></u></li>
+	a:hover, a:active {
+		color: #3BAFDA;
+		outline: none;
+		text-decoration: underline;
+	}
 
-        <h2 style="margin-top:20px;">Fettihit</h2>
-         <p>The gaming community&nbsp;Counter-strike in&nbsp;Europe. Founded in&nbsp;2015 by&nbsp;me&nbsp;and Alex which is also </br>known as Fetti das Nashorn. 
-		Now it is one of the most popular CSGO servers with Warcraft mod. Three servers located in London, Frankfurt and Atlanta.</p>
-		<u><li><a href="http://fettihit.eu">Project site</a></u></li>
-		
-		</section>
+	a:focus {
+		outline: thin dotted;
+	}
 
-        <aside id="sidebar">
-          <a href="https://github.com/hitmany" class="button">
-            <small>My profile in</small>
-            Github
-          </a>
-		<h3>Contacts & Profiles:</h3>
-		<p><a href="mailto:hitmany@hitmany.net">hitmany@hitmany.net<br>
-		<a href="http://steamcommunity.com/id/hitmany/">Steam</a></p>
-        </aside>
-      </div>
-    </div>
+	.wrapper {
+		background-image: linear-gradient(rgba(34, 34, 34, 0.5), rgba(0, 0, 0, 0));
+	}
 
-  </body>
+	.do-you-even-flexbox,
+	.container {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.container {
+		max-width: 700px;
+		padding: 8px 20px 15px;
+	}
+
+	.titles,
+	.contacts {
+		-webkit-animation-name: fade;
+		animation-name: fade;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+		-webkit-animation-delay: 0.2s;
+		animation-delay: 0.2s;
+		-webkit-animation-duration: 0.3s;
+		animation-duration: 0.3s;
+	}
+
+	.contacts {
+		margin-top: 3em;
+		-webkit-animation-delay: 0.4s;
+		animation-delay: 0.4s;
+	}
+
+	.left-half,
+	.right-half {
+		text-align: left;
+		width: 50%;
+		float: left;
+		padding-left: 30px;
+	}
+
+	h1,
+	h2 {
+		font-family: "Roboto Slab", Helvetica, Arial, sans-serif;
+		margin: 0;
+		font-weight: 400;
+		font-size: 6em;
+	}
+
+	h2 {
+		font-size: 2em;
+	}
+
+	h3 {
+		font-weight: normal;
+	}
+
+	.links {
+		list-style: circle;
+		font-size: 16px;
+		padding: 0;
+		padding-left: 20px;
+	}
+
+	.links li {
+		margin-bottom: .6em;
+	}
+
+	.links p {
+		margin: .6em 0 0 .5em;
+	}
+
+	@media (max-width: 700px) {
+		.do-you-even-flexbox {
+			display: none;
+		}
+
+		.container {
+			margin: 0 auto;
+			margin-top: 4%;
+		}
+	}
+
+	@media (max-width: 660px) {
+		h1 {
+			font-size: 5em;
+		}
+
+		h2 {
+			font-size: 1.7em;
+		}
+
+		.left-half, .right-half {
+			float: none;
+			width: 100%;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.left-half, .right-half {
+			float: none;
+			width: 100%;
+		}
+	}
+
+	@media (max-width: 550px) {
+		h1 {
+			font-size: 4em;
+		}
+
+		h2 {
+			font-size: 1.6em;
+		}
+	}
+
+	@media (max-width: 450px) {
+		h1 {
+			font-size: 3em;
+		}
+	}
+
+	@media (max-width: 360px) {
+		h1 {
+			font-size: 2.5em;
+		}
+	}
+
+	@-webkit-keyframes fade {
+		0% {
+			opacity: 0;
+			-webkit-transform: translateY(20px);
+		}
+
+		100% {
+			opacity: 1;
+			-webkit-transform: translateY();
+		}
+	}
+
+	@keyframes fade {
+		0% {
+			opacity: 0;
+			-webkit-transform: translateY(20px);
+			-ms-transform: translateY(20px);
+			transform: translateY(20px);
+		}
+
+		100% {
+			opacity: 1;
+			-webkit-transform: translateY();
+			-ms-transform: translateY();
+			transform: translateY();
+		}
+	}
+	</style>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="hitmany Personal Website">
+	<meta name="theme-color" content="#0288D1">
+
+	<link rel="image_src" href="images/avatar.jpg">
+</head>
+<body>
+	<div class="wrapper">
+		<i class="do-you-even-flexbox"></i>
+
+		<div class="container">
+			<div class="titles">
+				<h1>Hi, I'm Victor.</h1>
+				<h2>I build web apps and game plugins.</h2>
+			</div>
+
+			<div class="contacts">
+				<div class="left-half">
+					<h3><a href="http://hitmany.net/blog/">My blog</a></h3>
+					<h3>Contacts &amp; Profiles</h3>
+
+					<ul class="links">
+						<li><a href="mailto:hitmany@hitmany.net">hitmany@hitmany.net</a></li>
+						<li><a href="https://github.com/hitmany">GitHub</a></li>
+						<li><a href="https://steamcommunity.com/id/hitmany">Steam</a></li>
+					</ul>
+				</div>
+
+				<div class="right-half">
+					<h3>My current projects</h3>
+
+					<ul class="links">
+						<li>
+							<a href="http://fettihit.eu/">Fettihit</a>
+							<p>
+								Counter-strike gaming community in Europe. Founded in 2015 by me and Alex
+							</p>
+						</li>
+						<li>
+							<a href="http://lpstrike.ru/">Landing-party</a>
+							<p>
+								Counter-strike gaming community in Russia. Founded in 2009 by me and Dmitry
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
 </html>
